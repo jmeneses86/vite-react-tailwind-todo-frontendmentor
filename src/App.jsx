@@ -82,7 +82,7 @@ const App = () => {
     const changeFilter = (filter) => setFilter(filter);
 
     return (
-        <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat">
+        <div className="min-h-screen bg-gray-300 dark:bg-gray-900 bg-[url('./assets/images/bg-mobile-light.jpg')] dark:bg-[url('./assets/images/bg-mobile-dark.jpg')] bg-contain bg-no-repeat transition-all duration-1000">
             <Header></Header>
             <main className="mt-8 container mx-auto px-4">
                 <TodoCreate createTodo={createTodo}></TodoCreate>
@@ -96,7 +96,10 @@ const App = () => {
                     computedItemsLeft={computedItemsLeft}
                     clearCompleted={clearCompleted}
                 ></TodoComputed>
-                <TodoFilter changeFilter={changeFilter} filter={filter}></TodoFilter>
+                <TodoFilter
+                    changeFilter={changeFilter}
+                    filter={filter}
+                ></TodoFilter>
             </main>
             <Footer></Footer>
         </div>
